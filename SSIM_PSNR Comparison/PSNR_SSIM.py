@@ -100,7 +100,7 @@ for path in glob.glob(path_to_OURMODEL):
         image1 = np.array(cv2.imread(path))
         image2 = gt_finder(idx)
         image1.resize(image2.shape)
-        psnro.append((PSNR(image1, image2)+0.1)*1000)
+        psnro.append((PSNR(image1, image2))*1000)
         ssimo.append((calc_ssim(image1, image2)))
     except:
         continue
